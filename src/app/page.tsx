@@ -17,18 +17,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center justify-center">
           <div className="grid grid-cols-1 sm:px-44 md:grid-cols-2 lg:grid-cols-3">
-            <ShowcaseProject
-              title="Mentor as a Catalyst"
-              description="Mentorship is more than just guidance—its a catalyst for personal and professional growth. surakshit aims to empower mentees to reach their full potential."
-            />
-            <ShowcaseProject
-              title="Enabling Collaboration"
-              description="Surakshit is not just a platform; it's a collaborative space where ideas are born, refined, and brought to life."
-            />
-            <ShowcaseProject
-              title="Innovation at the Forefront"
-              description="Whether youre a mentee with a groundbreaking project or a mentor with a unique perspective, our platform is the canvas where innovation thrives."
-            />
+            <ShowcaseProject description="From ransomware attacks to phishing scams, cybersecurity serves as a critical shield, protecting businesses and individuals alike from the devastating consequences of cybercrime." />
+            <ShowcaseProject description="In an interconnected world, cybersecurity stands as the first line of defense, safeguarding our digital identities, personal information, and sensitive data from malicious actors." />
+            <ShowcaseProject description="As technology evolves, so do cyber threats. Embracing a proactive cybersecurity mindset is essential to stay ahead of adversaries and mitigate potential risks to our digital infrastructure" />
           </div>
         </div>
       </section>

@@ -1,11 +1,11 @@
 {
-  "id": "a5a81b3d-66f2-4ec8-aa6c-6f9ecc52f886",
+  "id": "def6dfc4-1a7e-4a7b-b2dd-661164aef286",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
   "tables": {
-    "reportedUrls": {
-      "name": "reportedUrls",
+    "reported_urls": {
+      "name": "reported_urls",
       "schema": "",
       "columns": {
         "id": {

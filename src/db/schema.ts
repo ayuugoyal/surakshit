@@ -19,7 +19,7 @@ export const users = pgTable("users", {
 
 export type User = typeof users.$inferSelect;
 
-export const reportedUrls = pgTable("reportedUrls", {
+export const reportedUrls = pgTable("reported_urls", {
   id: uuid("id").primaryKey().defaultRandom(),
   link: varchar("link").notNull(),
   user_id: uuid("user_id").notNull(),
