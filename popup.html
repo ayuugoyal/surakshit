@@ -32,7 +32,7 @@
             width: 100%;
         }
 
-        #myBtn {
+        #mybtn {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -46,45 +46,16 @@
         <header class="w3-container w3-center w3-padding-32">
             <img src="logo.png" alt="Surakshit" style="width:20%">
             <h1><b>Surakshit</b></h1>
-            <p>Safeguarding Your Online Odyssey - Unmasking Malicious URLs, Empowering Secure Surfing</p>
+            <p>Safeguarding Your Online Odyssey - Unmasking Malicious URLs, Empowering Secure Surfing</p>
         </header>
     </div>
-    <div class="inputbocx"><input type="text" id="links"></div>
-    <button type="button" id="myBtn">Check</button>
-    <div id="demo" class="heading"></div>
+    <div id="demo" class="heading">Safe</div>
     <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
         <a href="https://surakshit.vercel.app/" target="_blank">
             <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Report This Url »</button>
         </a>
     </footer>
-    <script>
-        const backendUrl = "http://localhost:8000/predict";
-
-        async function send_request(url) {
-            try {
-                const res = await fetch(`${backendUrl}?url=${encodeURIComponent(url)}`);
-                const data = await res.json();
-                return data.predicted_class;
-            } catch (e) {
-                return "safe";
-            }
-        }
-
-        document.getElementById("myBtn").addEventListener("click", async function () {
-            const urllink = document.getElementById("links").value;
-            console.log("URL:", urllink); // Log the URL to verify it's correct
-
-            try {
-                const data = await send_request(urllink);
-                console.log("Response:", data); // Log the response to verify
-
-                document.getElementById("demo").innerHTML = data;
-            } catch (error) {
-                console.error("Error:", error); // Log any errors that occur
-            }
-        });
-
-    </script>
+    <script src="hello.js"></script>
 </body>
 
 </html>
