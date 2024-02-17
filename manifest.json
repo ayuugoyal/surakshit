@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Surakshit",
   "version": "1.0",
 
@@ -9,5 +9,7 @@
   "background": {
     "scripts": ["surakshit.js"]
   },
-  "homepage_url": ["index.html"]
+  "action": {
+    "default_popup": "popup.html"
+  }
 }
