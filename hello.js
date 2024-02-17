@@ -34,13 +34,11 @@ const myElement = document.getElementById("demo");
 const urllink = document.getElementById("links");
 
 document.getElementById("myBtn").addEventListener("click", function () {
-  const requrl = {
-    url: urllink.value,
-  };
+  alert(urllink.value);
 
   const data = fetch(backendUrl, {
     method: "POST",
-    body: JSON.stringify({ url: url }),
+    body: JSON.stringify({ url: urllink.value }),
   })
     .then((res) => res.json())
     .then((j) => j.predicted_class);
