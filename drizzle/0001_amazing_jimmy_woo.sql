@@ -1,0 +1,1 @@
+ALTER TABLE "reported_urls" ADD COLUMN "count" integer NOT NULL;

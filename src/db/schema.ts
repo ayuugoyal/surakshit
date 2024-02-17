@@ -5,6 +5,7 @@ import {
   uuid,
   varchar,
   primaryKey,
+  integer,
 } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
@@ -24,6 +25,7 @@ export const reportedUrls = pgTable("reported_urls", {
   link: varchar("link").notNull(),
   user_id: uuid("user_id").notNull(),
   reason: varchar("reason").notNull(),
+  count: integer("count").notNull(),
 });
 
 export type reportedUrls = typeof reportedUrls.$inferSelect;

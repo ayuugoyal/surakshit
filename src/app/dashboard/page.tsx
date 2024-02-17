@@ -66,6 +66,7 @@ export default async function Page() {
                   <TableRow>
                     <TableHead>Reported Url</TableHead>
                     <TableHead>Reason</TableHead>
+                    <TableHead>count</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -73,6 +74,7 @@ export default async function Page() {
                     <TableRow key={index}>
                       <TableCell className="font-medium">{url.url}</TableCell>
                       <TableCell>{url.reason}</TableCell>
+                      <TableCell>{url.count}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -85,13 +87,14 @@ export default async function Page() {
                   <TableRow>
                     <TableHead>Reported Url</TableHead>
                     <TableHead>Reason</TableHead>
+                    <TableHead>count</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {getMyReportedUrls.map((url, index) => (
                     <TableRow key={index}>
                       <TableCell className="font-medium">{url.url}</TableCell>
-                      <TableCell>{url.reason}</TableCell>
+                      <TableCell>{url.count}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
