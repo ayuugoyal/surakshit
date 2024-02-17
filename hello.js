@@ -8,7 +8,7 @@ async function send_request(url) {
   try {
     const res = await fetch(backendUrl, {
       method: "POST",
-      body: JSON.stringify({ url: "https://google.com/" }),
+      body: JSON.stringify({ url: url }),
     })
       .then((res) => res.json())
       .then((j) => j.predicted_class);
@@ -33,11 +33,20 @@ const myElement = document.getElementById("demo");
 
 const urllink = document.getElementById("links");
 
-const requrl = {
-  url: urllink.value,
-};
+document.getElementById("myBtn").addEventListener("click", function () {
+  const requrl = {
+    url: urllink.value,
+  };
 
-const response = cancel(requrl);
+  const data = fetch(backendUrl, {
+    method: "POST",
+    body: JSON.stringify({ url: url }),
+  })
+    .then((res) => res.json())
+    .then((j) => j.predicted_class);
+
+  myElement.innerHTML = data;
+});
 
 // const response = "unsafe";
 
