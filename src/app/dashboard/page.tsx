@@ -5,12 +5,28 @@ import { getUser } from "@/actions/auth";
 import { Profile } from "@/components/Profile";
 import { redirect } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ReportForn from "@/components/ReportForn";
+import { get_reported_urls, get_user_reported_urls } from "@/actions/report";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default async function Page() {
   const user = await getUser();
+  console.log(user);
   if (!user) {
     redirect("/sign-in");
   }
+  const getAllUrls = await get_reported_urls();
+  const getMyReportedUrls = await get_user_reported_urls({ user_id: user.id });
+  console.log(getMyReportedUrls);
   return (
     <>
       <div className="flex flex-col w-full min-h-screen">
@@ -33,37 +49,57 @@ export default async function Page() {
         </header>
         <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] bg-gray-100/40 flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10 dark:bg-gray-800/40">
           <div className="max-w-6xl w-full mx-auto flex items-center gap-4">
-            <form className="flex-1">
-              <Input
-                className="bg-white dark:bg-gray-950"
-                placeholder="Search Reported Urls..."
-              />
-              <Button className="sr-only" type="submit">
-                Submit
-              </Button>
-            </form>
+            <ReportForn userId={user.id} />
           </div>
           <Tabs
             defaultValue="allproject"
             className=" flex justify-center flex-col w-full max-w-6xl mx-auto gap-5"
           >
             <TabsList>
-              <TabsTrigger value="allproject" className={"w-1/2"}>
+              <TabsTrigger value="allurls" className={"w-1/2"}>
                 All Reported Urls
               </TabsTrigger>
-              <TabsTrigger value="mentorProject" className={"w-1/2"}>
+              <TabsTrigger value="myurls" className={"w-1/2"}>
                 My Reported Urls
               </TabsTrigger>
             </TabsList>
-            <TabsContent value="allproject">
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full mx-auto">
-                l
-              </div>
+            <TabsContent value="allurls">
+              <Table>
+                <TableCaption>A list of all reported urls.</TableCaption>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Reported Url</TableHead>
+                    <TableHead>Reason</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {getAllUrls.map((url, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-medium">{url.url}</TableCell>
+                      <TableCell>{url.reason}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </TabsContent>
-            <TabsContent value="mentorProject">
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full mx-auto">
-                k
-              </div>
+            <TabsContent value="myurls">
+              <Table>
+                <TableCaption>A list of all my reported urls.</TableCaption>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Reported Url</TableHead>
+                    <TableHead>Reason</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {getMyReportedUrls.map((url, index) => (
+                    <TableRow key={index}>
+                      <TableCell className="font-medium">{url.url}</TableCell>
+                      <TableCell>{url.reason}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </TabsContent>
           </Tabs>
         </main>
