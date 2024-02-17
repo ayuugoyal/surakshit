@@ -62,10 +62,7 @@
 
         async function send_request(url) {
             try {
-                const res = await fetch(backendUrl, {
-                    method: "POST",
-                    body: JSON.stringify({ url: url }),
-                });
+                const res = await fetch(`${backendUrl}?url=${encodeURIComponent(url)}`);
                 const data = await res.json();
                 return data.predicted_class;
             } catch (e) {
@@ -75,11 +72,18 @@
 
         document.getElementById("myBtn").addEventListener("click", async function () {
             const urllink = document.getElementById("links").value;
-            alert(urllink);
+            console.log("URL:", urllink); // Log the URL to verify it's correct
 
-            const data = await send_request(urllink);
-            document.getElementById("demo").innerHTML = data;
+            try {
+                const data = await send_request(urllink);
+                console.log("Response:", data); // Log the response to verify
+
+                document.getElementById("demo").innerHTML = data;
+            } catch (error) {
+                console.error("Error:", error); // Log any errors that occur
+            }
         });
+
     </script>
 </body>
 
