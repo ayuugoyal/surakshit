@@ -31,6 +31,12 @@ async function cancel(requestDetails) {
 // add listener to the onBeforeRequest event
 const myElement = document.getElementById("demo");
 
-const response = "unsafe";
+let response = chrome.webRequest.onBeforeRequest.addListener(
+  cancel,
+  { urls: ["<all_urls>"] },
+  ["blocking"]
+);
+
+// const response = "unsafe";
 
 myElement.innerHTML = response;
