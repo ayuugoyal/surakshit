@@ -10,8 +10,8 @@ export default function Home() {
               Welcome to Surakshit
             </h1>
             <p className="mx-auto max-w-[700px] mt-4 text-lg">
-              A vibrant ecosystem that brings together the worlds of innovation
-              and mentorship.
+              Safeguarding Your Online Odyssey - Unmasking Malicious URLs,
+              Empowering Secure Surfing.
             </p>
           </div>
         </div>

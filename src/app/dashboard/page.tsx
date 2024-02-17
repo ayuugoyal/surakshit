@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { getUser } from "@/actions/auth";
 import { Profile } from "@/components/Profile";
 import { redirect } from "next/navigation";
@@ -12,7 +10,6 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -36,7 +33,6 @@ export default async function Page() {
             href="/"
           >
             <FrameIcon className="w-6 h-6" />
-            <span className="sr-only">Event</span>
           </Link>
           <nav className="hidden font-medium sm:flex flex-row items-center gap-5 text-sm lg:gap-6">
             <Link className="font-bold w-28" href="/dashboard">
@@ -52,7 +48,7 @@ export default async function Page() {
             <ReportForn userId={user.id} />
           </div>
           <Tabs
-            defaultValue="allproject"
+            defaultValue="allurls"
             className=" flex justify-center flex-col w-full max-w-6xl mx-auto gap-5"
           >
             <TabsList>
