@@ -6,11 +6,8 @@
   "description": "",
   "permissions": ["webRequest", "<all_urls>", "webRequestBlocking"],
 
-  "icons": {
-    "48": "icons/border-48.png"
-  },
-
   "background": {
     "scripts": ["surakshit.js"]
-  }
+  },
+  "homepage_url": ["index.html"]
 }
