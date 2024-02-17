@@ -2,14 +2,19 @@
   "manifest_version": 3,
   "name": "Surakshit",
   "version": "1.0",
-
-  "description": "",
-  "permissions": ["webRequest", "<all_urls>", "webRequestBlocking"],
-
+  "description": "Surakshit: Safeguarding Your Online Odyssey - Unmasking Malicious URLs, Empowering Secure Surfing.",
+  "permissions": ["tabs"],
   "background": {
-    "scripts": ["surakshit.js"]
+    "service_worker": "hello.js"
+  },
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   },
   "action": {
+    "default_icon": "logo.png",
     "default_popup": "popup.html"
-  }
+  },
+  "host_permissions": ["activeTab"]
 }
