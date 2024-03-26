@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Surakshit
+
+## Safeguarding Your Online Odyssey - Unmasking Malicious URLs, Empowering Secure Surfing
+
+Surakshit is a cybersecurity project aimed at protecting businesses and individuals from cyber threats such as ransomware attacks, phishing scams, and other malicious activities. By leveraging advanced technologies and proactive strategies, Surakshit ensures a secure online experience for users.
+
+## Key Features
+
+- **Malicious URL Detection:** Utilizes advanced AI models, including Hugging Face Transformers, to identify and unmask malicious URLs in real-time.
+- **Secure Surfing:** Empowers users with secure browsing capabilities, mitigating risks associated with cyber threats.
+- **Proactive Cybersecurity:** Implements proactive measures to stay ahead of adversaries and protect digital identities, personal information, and sensitive data.
 
 ## Getting Started
 
-First, run the development server:
+To run Surakshit locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   git clone https://github.com/ayuugoyal/surakshit.git
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Navigate to the project directory:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   cd surakshit
 
-## Learn More
+3. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Run the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open http://localhost:3000 in your browser to access Surakshit.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
